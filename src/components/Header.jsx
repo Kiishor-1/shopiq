@@ -57,7 +57,7 @@ const Header = () => {
             style={getSlideStyle(index)}
           >
             <div className="w-full h-full relative">
-              <h2 className={`absolute top-[30%] uppercase left-[5%] z-[20] text-[#E2808A] text-4xl max-w-[220px] font-bold text-center`}>{slide.title}</h2>
+              <h2 className={`absolute md:top-[30%] top-[45%] uppercase left-[5%] z-[20] text-[#E2808A] md:text-4xl text-2xl max-w-[220px] font-bold text-center`}>{slide.title}</h2>
               <img src={slide?.image} className="relative z-1 h-full w-full rounded-lg object-cover object-cente" loading="lazy" alt="" />
             </div>
           </div>
