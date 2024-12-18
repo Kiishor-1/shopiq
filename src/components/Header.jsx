@@ -57,7 +57,7 @@ const Header = () => {
             style={getSlideStyle(index)}
           >
             <div className="w-full h-full relative">
-              <h2 className={`absolute top-[30%] uppercase left-[5%] z-[20] ${slide.color} text-4xl max-w-[220px] font-bold text-center`}>{slide.title}</h2>
+              <h2 className={`absolute top-[30%] uppercase left-[5%] z-[20] text-[#E2808A] text-4xl max-w-[220px] font-bold text-center`}>{slide.title}</h2>
               <img src={slide?.image} className="relative z-1 h-full w-full rounded-lg object-cover object-cente" loading="lazy" alt="" />
             </div>
           </div>
@@ -66,13 +66,13 @@ const Header = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-[45%] flex items-center justify-center h-12 w-12 bg-black text-white border border-2 border-white rounded-full z-10"
+        className="absolute left-2 top-[45%]  flex items-center justify-center md:h-12 md:w-12 h-7 w-7 bg-black text-white border border-2 border-white rounded-full z-10"
       >
         <FaChevronLeft />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-[45%] flex items-center justify-center h-12 w-12 bg-black text-white rounded-full border border-2 border-white z-10"
+        className="absolute right-2 top-[45%]  flex items-center justify-center md:h-12 md:w-12 h-7 w-7 bg-black text-white rounded-full border border-2 border-white z-10"
       >
         <FaChevronRight />
       </button>

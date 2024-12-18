@@ -77,9 +77,9 @@ export const footerData = [
 
 
 export const slidesData = [
-  { id: 1, title: "#Fashionera - Deal of the Year Edition", bg: "bg-yellow-400", color: "text-[#E2808A]", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544127/img1_kwitcj.png" },
-  { id: 2, title: "Save up to 35% on perfumes & frangrances", bg: "bg-blue-600", color: "text-[#E2808A]", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544127/img2_i2cj7d.png" },
-  { id: 3, title: "Loot on Beauty Products", bg: "bg-red-500", color: "text-[#E2808A]", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544130/img3_yqeixt.png" },
-  { id: 4, title: "Mega Discounts on Handbags & Heels", bg: "bg-green-500", color: "text-[#E2808A]", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544130/img4_vrcwhw.png" },
-  { id: 5, title: "Mega Sale on Fashionable Jeans", bg: "bg-purple-500", color: "text-[#E2808A]", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544129/img5_reviwa.png" },
+  { id: 1, title: "#Fashionera - Deal of the Year Edition", bg: "bg-yellow-400", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544127/img1_kwitcj.png" },
+  { id: 2, title: "Save up to 35% on perfumes & frangrances", bg: "bg-blue-600", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544127/img2_i2cj7d.png" },
+  { id: 3, title: "Loot on Beauty Products", bg: "bg-red-500", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544130/img3_yqeixt.png" },
+  { id: 4, title: "Mega Discounts on Handbags & Heels", bg: "bg-green-500", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544130/img4_vrcwhw.png" },
+  { id: 5, title: "Mega Sale on Fashionable Jeans", bg: "bg-purple-500", image: "https://res.cloudinary.com/dkvrdo3z1/image/upload/v1734544129/img5_reviwa.png" },
 ];

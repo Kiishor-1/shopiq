@@ -35,9 +35,9 @@ const Navbar = () => {
                             className="text-gray-800 hover:text-gray-500 focus:outline-none"
                         >
                             {isOpen ? (
-                                <FaTimes />
+                                <FaTimes fontSize="1.3rem" />
                             ) : (
-                                <GiHamburgerMenu />
+                                <GiHamburgerMenu fontSize="1.8rem" />
                             )}
                         </button>
                     </div>
