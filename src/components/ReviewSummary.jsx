@@ -18,7 +18,7 @@ const ReviewSummary = ({ reviews }) => {
     }
 
     return (
-        <div className="bg-white mt-4 p-8 rounded-lg w-full flex flex-col md:flex-row items-center gap-4">
+        <div className="bg-white mt-4 md:p-8 p-4 rounded-lg w-full flex flex-col md:flex-row items-center gap-4">
             <div className="flex flex-col items-center md:items-start md:w-1/3">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Average Rating</h3>
                 <div className="flex items-center space-x-4 rounded-full h-[150px] w-[150px] justify-center shadow-md p-4 flex-col">
@@ -45,7 +45,7 @@ const ReviewSummary = ({ reviews }) => {
                 <p className="text-gray-500 text-sm mt-2">Based on {totalRatings} ratings</p>
             </div>
 
-            <div className="md:w-2/3 w-2/3 mx-auto">
+            <div className="md:w-2/3 w-full mx-auto">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">Rating Breakdown</h3>
                 <div className="space-y-2">
                     {ratingBreakdown.map(({ rating, percentage }, index) => (

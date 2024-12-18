@@ -11,14 +11,13 @@ export default async function ProductDetail({ params }) {
 
     const response = await fetch(`https://dummyjson.com/products/${id}`);
     const product = await response.json();
-    console.log('product', product)
 
     if (!product) {
         notFound();
     }
 
     return (
-        <div className="p-6 flex md:flex-row flex-col items-center md:items-start gap-8">
+        <div className="md:p-6 m-2 flex md:flex-row flex-col items-center md:items-start gap-8">
             <div className="md:w-[40%] w-[100%]">
                 <Slider images={product.images} />
             </div>
