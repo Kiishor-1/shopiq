@@ -6,6 +6,7 @@ import { slidesData } from "@/helpers/data";
 const Header = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,11 +17,29 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (isPaused) return; 
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % slidesData.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, activeIndex]);
+
+
+  const handleUserInteraction = () => {
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000);
+  };
+
   const nextSlide = () => {
+    handleUserInteraction();
     setActiveIndex((prev) => (prev + 1) % slidesData.length);
   };
 
   const prevSlide = () => {
+    handleUserInteraction();
     setActiveIndex(
       (prev) => (prev - 1 + slidesData.length) % slidesData.length
     );
@@ -39,9 +58,9 @@ const Header = () => {
       if (position === 0) {
         return { width: "60%", left: "5%", zIndex: 3, opacity: 1 };
       } else if (position === 1) {
-        return { width: "25%", left: "70%", zIndex: 2, opacity: 1, fontSize:"1rem"};
+        return { width: "25%", left: "70%", zIndex: 2, opacity: 1, fontSize: "1rem" };
       } else if (position === 2) {
-        return { width: "15%", left: "85%", zIndex: 1, opacity: 1, fontSize:"1rem" };
+        return { width: "15%", left: "85%", zIndex: 1, opacity: 1, fontSize: "1rem" };
       }
       return { width: "0", left: "100%", opacity: 0 };
     }
@@ -57,8 +76,17 @@ const Header = () => {
             style={getSlideStyle(index)}
           >
             <div className="w-full h-full relative">
-              <h2 className={`absolute md:top-[30%] top-[35%] uppercase left-[5%] z-[20] text-[#E2808A] md:text-4xl text-2xl md:max-w-[220px] max-w-[100px] font-bold text-center`}>{slide.title}</h2>
-              <img src={slide?.image} className="relative z-1 h-full w-full rounded-lg object-cover object-cente" loading="lazy" alt="" />
+              <h2
+                className={`absolute md:top-[30%] top-[35%] uppercase left-[5%] z-[20] text-[#E2808A] md:text-4xl text-2xl md:max-w-[220px] max-w-[100px] font-bold text-center`}
+              >
+                {slide.title}
+              </h2>
+              <img
+                src={slide?.image}
+                className="relative z-1 h-full w-full rounded-lg object-cover object-center"
+                loading="lazy"
+                alt={slide.title}
+              />
             </div>
           </div>
         ))}
@@ -66,15 +94,15 @@ const Header = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-[45%]  flex items-center justify-center md:h-12 md:w-12 h-7 w-7 bg-black text-white border border-2 border-white rounded-full z-10"
+        className="md:block hidden absolute left-2 top-[45%] md:h-12 md:w-12 h-7 w-7 bg-black text-white border border-2 border-white rounded-full z-10"
       >
-        <FaChevronLeft />
+        <FaChevronLeft className="translate-x-[70%] translate-y-[10%]" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-[45%]  flex items-center justify-center md:h-12 md:w-12 h-7 w-7 bg-black text-white rounded-full border border-2 border-white z-10"
+        className="md:block hidden absolute right-2 top-[45%] md:h-12 md:w-12 h-7 w-7 bg-black text-white rounded-full border border-2 border-white z-10"
       >
-        <FaChevronRight />
+        <FaChevronRight className="translate-x-[80%] translate-y-[10%]" />
       </button>
     </div>
   );
