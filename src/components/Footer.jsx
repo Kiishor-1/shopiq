@@ -31,6 +31,7 @@ const Footer = () => {
                       key={imageIndex}
                       src={image.src}
                       alt={image.alt}
+                      loading="lazy"
                       className="w-50 cursor-pointer"
                     />
                   ))}

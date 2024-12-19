@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => (
                 color1="#e4e5e9"
                 color2="#FFD700"
             />
-            <p className="text-xs">{product.rating} Stars</p>
+            <p className="text-xs">{product?.rating.toFixed(1)} Stars</p>
         </div>
 
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#f7f7ee] opacity-50 z-10 hidden group-active:block transition-opacity duration-300"></div>
