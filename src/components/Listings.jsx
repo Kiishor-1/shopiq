@@ -61,6 +61,7 @@ const Listings = () => {
 
   return (
     <div>
+      <h2 className="md:text-4xl text-2xl p-4 mt-4 text-gray-600 font-semibold">Top Selling Products</h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-2 md:p-6 p-4">
         {products.map((product) => (
           <div key={product.id} onClick={handleSaveState}>
