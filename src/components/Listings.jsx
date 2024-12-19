@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import { FaChevronCircleDown } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Listings = () => {
   const [page, setPage] = useState(1);
@@ -26,13 +27,16 @@ const Listings = () => {
 
   const fetchInitialProducts = async () => {
     setLoading(true);
+    const toastId = toast.loading('Fetching products');
     try {
       const response = await fetch(`https://dummyjson.com/products?limit=12&skip=0`);
       const data = await response.json();
       setProducts(data.products);
+      toast.dismiss(toastId)
     } catch (error) {
       console.error("Error fetching products:", error);
     } finally {
+      toast.dismiss(toastId)
       setLoading(false);
     }
   };
